@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lic. Guillermo Díaz Ramírez | Abogado</title>
     
-    <!-- Metadatos para que WhatsApp muestre una vista previa profesional -->
+    <!-- Metadatos para vista previa en redes sociales -->
     <meta property="og:title" content="Lic. Guillermo Díaz Ramírez">
     <meta property="og:description" content="Contacto Profesional - Abogado Postulante en Puebla.">
     <meta property="og:image" content="https://placehold.co/600x400/020617/c5a059?text=GD">
     
-    <!-- Librerías de diseño (CDNs gratuitos) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
-        tailwind.config = {
+        // Configuración de tema personalizado
+        window.tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         law: {
                             text: '#f8fafc',
                             bg: '#020617',
-                            accent: '#c5a059', // Dorado elegante
+                            accent: '#c5a059',
                         }
                     }
                 }
             }
-        }
+        };
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
@@ -47,7 +49,7 @@
         }
 
         .animate-in {
-            animation: slideUp 0.6s ease-out;
+            animation: slideUp 0.6s ease-out forwards;
         }
 
         @keyframes slideUp {
@@ -55,7 +57,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Estilo para simular relieve en el logo */
         .logo-shadow {
             box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.3);
         }
@@ -64,11 +65,10 @@
 <body class="min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-sm glass-card rounded-[2.5rem] overflow-hidden animate-in shadow-2xl">
-        <!-- Borde dorado superior -->
         <div class="h-1.5 bg-law-accent"></div>
 
         <div class="p-8 text-center">
-            <!-- Logo / Monograma -->
+            <!-- Monograma -->
             <div class="mb-6 flex justify-center">
                 <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center logo-shadow border-2 border-law-accent/30">
                     <svg viewBox="0 0 100 100" class="w-16 h-16" xmlns="http://www.w3.org/2000/svg">
@@ -80,15 +80,13 @@
                 </div>
             </div>
 
-            <!-- Nombre y Título -->
             <h1 class="text-2xl font-bold text-white mb-1 tracking-tight">Guillermo Díaz Ramírez</h1>
             <p class="text-law-accent uppercase tracking-[0.3em] text-[10px] font-semibold mb-6">Abogado Postulante</p>
 
-            <!-- Botones de contacto directo -->
+            <!-- Acciones -->
             <div class="space-y-3">
-                <!-- WhatsApp -->
                 <a href="https://wa.me/529636333087" target="_blank" class="flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all group active:scale-95">
-                    <div class="p-2.5 bg-green-500/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <div class="p-2.5 bg-green-500/20 rounded-xl">
                         <i data-lucide="message-circle" class="w-5 h-5 text-green-500"></i>
                     </div>
                     <div class="ml-4 text-left">
@@ -97,9 +95,8 @@
                     </div>
                 </a>
 
-                <!-- Llamada Oficina -->
                 <a href="tel:2229521384" class="flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all group active:scale-95">
-                    <div class="p-2.5 bg-law-accent/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <div class="p-2.5 bg-law-accent/20 rounded-xl">
                         <i data-lucide="phone" class="w-5 h-5 text-law-accent"></i>
                     </div>
                     <div class="ml-4 text-left">
@@ -108,9 +105,8 @@
                     </div>
                 </a>
 
-                <!-- Guardar Contacto -->
-                <button onclick="downloadVCard()" class="w-full flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all group active:scale-95">
-                    <div class="p-2.5 bg-blue-500/20 rounded-xl group-hover:scale-110 transition-transform">
+                <button id="btnVCard" class="w-full flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all group active:scale-95">
+                    <div class="p-2.5 bg-blue-500/20 rounded-xl">
                         <i data-lucide="user-plus" class="w-5 h-5 text-blue-500"></i>
                     </div>
                     <div class="ml-4 text-left">
@@ -119,9 +115,8 @@
                     </div>
                 </button>
 
-                <!-- Ubicación -->
                 <a href="https://www.google.com/maps/search/?api=1&query=9+sur+2310+Chulavista+Puebla" target="_blank" class="flex items-center p-4 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/5 transition-all group active:scale-95">
-                    <div class="p-2.5 bg-red-500/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <div class="p-2.5 bg-red-500/20 rounded-xl">
                         <i data-lucide="map-pin" class="w-5 h-5 text-red-500"></i>
                     </div>
                     <div class="ml-4 text-left">
@@ -131,8 +126,7 @@
                 </a>
             </div>
 
-            <!-- Botón Compartir enlace -->
-            <button onclick="shareLink()" class="mt-8 w-full py-4 bg-law-accent text-slate-950 font-bold rounded-2xl shadow-lg hover:bg-[#b08d4a] transition-all active:scale-95 flex items-center justify-center gap-2">
+            <button id="btnShare" class="mt-8 w-full py-4 bg-law-accent text-slate-950 font-bold rounded-2xl shadow-lg hover:bg-[#b08d4a] transition-all active:scale-95 flex items-center justify-center gap-2">
                 <i data-lucide="share-2" class="w-4 h-4"></i>
                 Compartir Tarjeta
             </button>
@@ -144,60 +138,63 @@
     </div>
 
     <script>
-        // Inicializar iconos de Lucide
+        // Inicializar iconos
         lucide.createIcons();
 
-        // Función para generar y descargar archivo vCard (.vcf)
-        function downloadVCard() {
-            const vCardData = `BEGIN:VCARD
-VERSION:3.0
-FN:Lic. Guillermo Díaz Ramírez
-ORG:Estudio Jurídico
-TEL;TYPE=CELL:9636333087
-TEL;TYPE=WORK:2229521384
-ADR;TYPE=WORK:;;9 sur 2310;Puebla;Chulavista;72000;Mexico
-TITLE:Abogado Postulante
-END:VCARD`;
-            const blob = new Blob([vCardData], { type: 'text/vcard' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
+        // Función para descargar contacto
+        document.getElementById('btnVCard').addEventListener('click', function() {
+            var vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:Lic. Guillermo Díaz Ramírez',
+                'ORG:Estudio Jurídico',
+                'TEL;TYPE=CELL:9636333087',
+                'TEL;TYPE=WORK:2229521384',
+                'ADR;TYPE=WORK:;;9 sur 2310;Puebla;Chulavista;72000;Mexico',
+                'TITLE:Abogado Postulante',
+                'END:VCARD'
+            ].join('\n');
+
+            var blob = new Blob([vCardData], { type: 'text/vcard' });
+            var url = window.URL.createObjectURL(blob);
+            var a = document.createElement('a');
             a.href = url;
             a.download = 'Guillermo_Diaz_Ramirez.vcf';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-        }
+            window.URL.revokeObjectURL(url);
+        });
 
-        // Función nativa para compartir el enlace
-        async function shareLink() {
-            const shareData = {
+        // Función para compartir
+        document.getElementById('btnShare').addEventListener('click', function() {
+            var shareData = {
                 title: 'Lic. Guillermo Díaz Ramírez',
                 text: 'Te comparto mi tarjeta digital de contacto.',
                 url: window.location.href
             };
 
             if (navigator.share) {
-                try {
-                    await navigator.share(shareData);
-                } catch (err) {
-                    console.log('Compartido cancelado');
-                }
+                navigator.share(shareData).catch(function(err) {
+                    console.log('Error compartiendo');
+                });
             } else {
-                // Si el navegador no soporta compartir, copiamos al portapapeles
-                try {
-                    await navigator.clipboard.writeText(window.location.href);
-                    alert("Enlace copiado al portapapeles");
-                } catch (err) {
-                    const tempInput = document.createElement('input');
-                    tempInput.value = window.location.href;
-                    document.body.appendChild(tempInput);
-                    tempInput.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(tempInput);
-                    alert("Enlace copiado");
-                }
+                var el = document.createElement('textarea');
+                el.value = window.location.href;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                
+                var btn = document.getElementById('btnShare');
+                var originalText = btn.innerHTML;
+                btn.innerText = '¡Enlace Copiado!';
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    lucide.createIcons();
+                }, 2000);
             }
-        }
+        });
     </script>
 </body>
 </html>
